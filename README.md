@@ -1,13 +1,13 @@
 <div align="center">
 
-# 🤖 AI Model Training Project
+# 🏆 ML-Triathlon
 
-**Three Algorithms · Three Datasets · One Comparative Analysis**
+**Three Algorithms · Three Datasets · One Challenge**
 
 [![Python](https://img.shields.io/badge/Python-3.14-blue?logo=python&logoColor=white)](https://python.org)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-1.8-orange?logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?logo=jupyter&logoColor=white)](https://jupyter.org)
+[![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/mtahanaeem/ML-Triathlon)
 
 </div>
 
@@ -28,7 +28,7 @@ This project implements and evaluates **three different machine learning algorit
 ## 🗂️ Repository Structure
 
 ```
-AI-Model-Training-Project/
+ML-Triathlon/
 ├── 📓 K-Means_LEGO.ipynb              # K-Means clustering notebook
 ├── 📓 KNN_Wildlife_Strikes.ipynb      # KNN classification notebook
 ├── 📓 Naive_Bayes_UFO.ipynb           # Naive Bayes text classification notebook
@@ -37,11 +37,14 @@ AI-Model-Training-Project/
 │   ├── lego_themes.csv                 # 494 LEGO themes
 │   ├── wildlife_strikes.csv            # 19K FAA wildlife strike records
 │   └── nuforc_sightings.csv            # 80K UFO sighting reports
-├── 📁 models/
-│   ├── kmeans_lego.py                  # K-Means source code
-│   ├── knn_wildlife.py                 # KNN source code
-│   └── naive_bayes_ufo.py              # Naive Bayes source code
-├── requirements.txt                    # Python dependencies
+├── 📁 results/
+│   ├── lego_elbow.png                  # Elbow & silhouette plots
+│   ├── lego_clusters.png               # Cluster visualizations
+│   ├── wildlife_knn_accuracy.png       # Accuracy vs k curve
+│   ├── wildlife_confusion_matrix.png   # Confusion matrix
+│   ├── ufo_confusion_matrix.png        # Confusion matrix
+│   └── ufo_top_features.png            # Top TF-IDF features
+├── .gitignore
 └── README.md                           # You are here
 ```
 
@@ -142,31 +145,34 @@ The National UFO Reporting Center's collection of sighting reports spanning deca
 
 ### Prerequisites
 
+Make sure you have the required libraries installed:
+
 ```bash
-pip install -r requirements.txt
+pip install numpy pandas scikit-learn matplotlib nltk seaborn nbformat
 ```
 
 ### Running the Notebooks
 
-Open any of the three notebooks in VS Code or Jupyter:
+Open any of the three notebooks in VS Code or Jupyter and run cells sequentially:
 
 ```bash
-# VS Code
 code K-Means_LEGO.ipynb
-
-# Or Jupyter
-jupyter notebook K-Means_LEGO.ipynb
 ```
 
-Run cells sequentially — all plots render inline thanks to `%matplotlib inline`.
+All plots render inline inside the notebook, and are also saved to the `results/` folder.
 
-### Running Python Scripts Directly
+---
 
-```bash
-python models/kmeans_lego.py
-python models/knn_wildlife.py
-python models/naive_bayes_ufo.py
-```
+## 🖼️ Results Preview
+
+### K-Means — LEGO Clusters
+<img src="results/lego_clusters.png" alt="LEGO Clusters" width="700"/>
+
+### KNN — Confusion Matrix
+<img src="results/wildlife_confusion_matrix.png" alt="Wildlife Confusion Matrix" width="500"/>
+
+### Naive Bayes — Top Features per Shape
+<img src="results/ufo_top_features.png" alt="UFO Top Features" width="700"/>
 
 ---
 
@@ -186,12 +192,12 @@ python models/naive_bayes_ufo.py
 
 | Technology | Purpose |
 |:-----------|:--------|
-| [Python 3.14](https://python.org) | Core language |
-| [scikit-learn 1.8](https://scikit-learn.org) | ML algorithms (K-Means, KNN, Naive Bayes) |
-| [Pandas 3.0](https://pandas.pydata.org) | Data manipulation |
-| [NumPy 2.4](https://numpy.org) | Numerical computing |
-| [Matplotlib 3.10](https://matplotlib.org) | Visualization |
-| [NLTK 3.9](https://nltk.org) | Text preprocessing (stopwords) |
+| [Python](https://python.org) | Core language |
+| [scikit-learn](https://scikit-learn.org) | ML algorithms (K-Means, KNN, Naive Bayes) |
+| [Pandas](https://pandas.pydata.org) | Data manipulation |
+| [NumPy](https://numpy.org) | Numerical computing |
+| [Matplotlib](https://matplotlib.org) | Visualization |
+| [NLTK](https://nltk.org) | Text preprocessing (stopwords) |
 | [Jupyter](https://jupyter.org) | Interactive notebooks |
 
 ---
